@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Streaming</title>
+    <!-- 引入flv.js的库 -->
+    <script src="http://bilibili.github.io/flv.js/dist/flv.js"></script>
+</head>
+<body>
+
+<video id="videoElement" controls width="600" height="400"></video>
+
+<script>
+    if (flvjs.isSupported()) {
+        var videoElement = document.getElementById('videoElement');
+        var flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            url: "https://rtmp01open.ys7.com:9188/v3/openlive/K79908595_2_1.flv?expire=1695111841&id=623917154919514112&t=fb5536743123cac3cb5f9956e673fe06fbdf0de1158b0dd2e8b61598c94d12aa&ev=100"
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+     }
+</script>
+</body>
+</html>
